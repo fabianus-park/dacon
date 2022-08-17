@@ -130,6 +130,8 @@ dmypy.json
 
 
 # user defined
-/seoul_landmark/dataset
+*/dataset
+*/data
 *.zip
 *.pth
+*.csv

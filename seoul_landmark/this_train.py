@@ -122,18 +122,18 @@ if __name__ == "__main__":
 
     # load resnet18 with the pre-trained weights
     # this_model = torchvision.models.resnet18(pretrained=True)
-    this_model = torchvision.models.resnet152(pretrained=True)
+    # this_model = torchvision.models.resnet152(pretrained=False)
+    # this_model = torchvision.models.resnet101(pretrained=False)
+    this_model = torchvision.models.resnet50(pretrained=False)
 
     num_classes = 10
     num_ftrs = this_model.fc.in_features
     this_model.fc = nn.Linear(num_ftrs, num_classes)
 
-    this_model.to(device)
-
 
     # get the model summary
-    from torchsummary import summary
-    summary(this_model, input_size=(3, 224, 224), device=device.type)
+    # from torchsummary import summary
+    # summary(this_model, input_size=(3, 224, 224), device=device.type)
 
     criterion = torch.nn.CrossEntropyLoss()
     optimizer = torch.optim.SGD(params = this_model.parameters(), lr = CFG["LEARNING_RATE"])

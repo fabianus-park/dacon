@@ -37,11 +37,11 @@ if __name__ == "__main__":
     # this_model = CNNclassification().to(device)
     # this_model.load_state_dict(checkpoint)
 
-    checkpoint = torch.load('.\\seoul_landmark\\best_model.20220813134818.pth')
+    checkpoint = torch.load('.\\seoul_landmark\\best_model.20220816191147.pth')
     #this_model = CNNclassification().to(device)
 
     #this_model = torchvision.models.resnet18(pretrained=True)
-    this_model = torchvision.models.resnet152(pretrained=True)
+    this_model = torchvision.models.resnet50(pretrained=False)
     num_classes = 10
     num_ftrs = this_model.fc.in_features
     this_model.fc = nn.Linear(num_ftrs, num_classes)
