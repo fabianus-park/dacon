@@ -1,4 +1,4 @@
-import this_configuation
+# import this_configuation
 
 import time
 # from time import process_time
@@ -42,6 +42,8 @@ print( time.time() - start2, start2 )
 
 # import this_predict
 # from this_predict import *
+
+import torch
 
 
 if __name__ == "__main__":
